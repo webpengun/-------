@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="" />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #map {
+                padding-top: 30px;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 20px;
+                /* padding-top: 30px; */
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .btn {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                border: 1px solid black;
+                position: relative;
+                z-index: 9999;
+            }
+            .logo img {
+                width: 100%;
+            }
+
+            .btn span {
+                display: inline-block;
+                width: 50%;
+                background-color: rgb(42, 27, 27);
+                height: 2px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                transition: all 0.6s ease;
+            }
+
+            .btn span:nth-of-type(1) {
+                top: 15px;
+            }
+            .btn span:nth-of-type(2) {
+                top: 23px;
+            }
+            .btn span:nth-of-type(3) {
+                top: 31px;
+            }
+
+            .menu {
+                width: 100%;
+                height: 60vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                position: fixed;
+                top: -100%;
+                left: 0;
+                transition: all 0.6s ease;
+                /* text-align: center; */
+            }
+            .menu ul li a {
+                display: inline-block;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+            }
+
+            .menu ul {
+                list-style: none;
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            .menu.is-active {
+                top: 0;
+            }
+            main {
+                height: 700px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                font-size: 35px;
+                background-color: rgb(235, 238, 241);
+                background-image: url("programing.jpg");
+                background-size: cover;
+                letter-spacing: 9px;
+                font-weight: bold;
+            }
+
+            .btn.is-active span:nth-of-type(1) {
+                transform: translate(-11px, 8px) rotate(-45deg);
+            }
+            .btn.is-active span:nth-of-type(2) {
+                display: none;
+            }
+            .btn.is-active span:nth-of-type(3) {
+                transform: translate(-11px, -8px) rotate(45deg);
+            }
+
+            #description {
+                margin-right: auto;
+                padding-left: 30px;
+                display: inline-block;
+                padding-top: 5px;
+            }
+
+            main ul li {
+                font-size: 13px;
+                list-style-type: none;
+            }
+
+            .schedule {
+                width: 500px;
+                height: 100px;
+                border-radius: 10px;
+                background-color: white;
+                margin-top: 70px;
+                padding: 30px;
+            }
+
+            .title {
+                margin-bottom: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo"><img src="icon-128x128.png" alt="" /></div>
+            <span id="description">Program school</span>
+            <div class="btn"><span></span><span></span><span></span></div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">top</a></li>
+                    <li><a href="#">コース一覧</a></li>
+                    <li><a href="#">受講生の声</a></li>
+                    <li><a href="#">スクールの特徴</a></li>
+                    <li><a href="#map">map</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="title">
+                <p>javascriptが学べる</p>
+                <p>オンラインプログラムスクール！</p>
+            </div>
+
+            <div class="schedule">
+                <ul>
+                    <li>⚫︎スケジュール</li>
+                    <li>12.08 ハンバーガーメニュー講座</li>
+                    <li>00.00 未定</li>
+                    <li>00.00 未定</li>
+                    <li>00.00 未定</li>
+                </ul>
+            </div>
+        </main>
+        <section id="map">
+            <h2>地図はこちら</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26238.105879316056!2d135.47764366379693!3d34.711151287147246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6852acacab9%3A0x5a07b5470414d038!2z5Lit5rSl6aeF!5e0!3m2!1sja!2sjp!4v1733457377245!5m2!1sja!2sjp"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </section>
+
+        <span style="background-color: aqua">テストテストテストテストテスト</span>
+        <span style="background: linear-gradient(transparent 50%, #21ff00 50%)">テストテストテストテストテスト</span>
+        ;
+        <script>
+            const btn = document.querySelector(".btn");
+            const menu = document.querySelector(".menu");
+            const links = document.querySelectorAll(".menu a");
+            btn.addEventListener("click", (e) => {
+                e.target.classList.toggle("is-active");
+                menu.classList.toggle("is-active");
+            });
+
+            links.forEach((link) => {
+                link.addEventListener("click", () => {
+                    btn.classList.remove("is-active");
+                    menu.classList.remove("is-active");
+                });
+            });
+        </script>
+    </body>
+</html>
