@@ -140,6 +140,21 @@
                 text-align: center;
             }
 
+            footer {
+                background-color: #333; /* 背景色 */
+                color: #fff; /* テキスト色 */
+                text-align: center; /* 中央揃え */
+                padding: 5px 0; /* 上下の余白 */
+                font-size: 14px; /* フォントサイズ */
+                margin-top: 10px;
+            }
+
+            footer p {
+                margin: 0; /* 余白をリセット */
+                font-size: 12px; /* コピーライトのフォントサイズ */
+                color: #ccc; /* 少し薄めの色 */
+            }
+
             @media (max-width: 768px) {
                 /* モバイル画面ではヘッダーを縦並びに */
 
@@ -149,6 +164,7 @@
                     height: auto;
                     padding-top: 0;
                     left: 0;
+                    letter-spacing: 0px;
                 }
 
                 .logo {
@@ -171,9 +187,23 @@
 
                 .schedule {
                     /* スケジュールのボックスサイズを調整 */
-                    width: 100%;
+                    width: 80%;
                     height: auto;
                     padding: 15px;
+                    margin-bottom: 10px;
+                }
+
+                .schedule ul {
+                    /* スケジュールのボックスサイズを調整 */
+                    width: 100%;
+                    height: auto;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .schedule ul li {
+                    /* スケジュールのボックスサイズを調整 */
+                    font-size: 9px;
                 }
 
                 /* メニューのリストアイテムのスタイルを調整 */
@@ -185,6 +215,11 @@
                 .title p {
                     font-size: 18px; /* モバイル用にフォントサイズを小さく */
                     margin: 10px 0;
+                    letter-spacing: 3px;
+                }
+
+                .title {
+                    height: 20px;
                 }
             }
 
@@ -237,6 +272,12 @@
                 referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
         </section>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Program School. All rights reserved.</p>
+            </div>
+        </footer>
 
         <!-- <span style="background-color: aqua">テストテストテストテストテスト</span>
         <span style="background: linear-gradient(transparent 50%, #21ff00 50%)">テストテストテストテストテスト</span> -->
